@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header";
-import ProduccionPage from "./pages/ProduccionPage";
+import ProduccionPage from "./pages/produccionPage";
 import "./styles.css";
 
 

@@ -35,8 +35,8 @@ const GraficoEvolucionProd = () => {
       labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", 9],
       datasets: [
         {
-          label: "Producción ahora",
-          data: [0, 200, 480, 700, 1020, 1450, 1500, 1750, 1910],
+          label: "Producción real",
+          data: [0, 200, 480, 700, 1020, 1450, 1340, 1750, 1910],
           backgroundColor: CHART_COLOR_BLUE,
           borderColor: CHART_COLOR_BLUE,
           tension: 0.1,
@@ -54,7 +54,7 @@ const GraficoEvolucionProd = () => {
     setChartOptions({
       responsive: true,
       layout: {
-        padding: 12,
+        padding: 16 ,
       },
       scales: {
         x: {
