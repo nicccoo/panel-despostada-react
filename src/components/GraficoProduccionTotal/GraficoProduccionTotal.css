@@ -1,0 +1,7 @@
+.prod-total__barchart {
+    padding: 0 12px;
+    height: auto;
+    background-color: #192430;
+    border-radius: 12px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
