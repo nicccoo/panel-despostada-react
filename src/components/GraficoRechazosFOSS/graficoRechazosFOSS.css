@@ -1,0 +1,13 @@
+.rechazos-foss__barchart {
+  background-color: #192430;
+  border-radius: 12px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);  
+}
+
+.foss-charts {
+  display: flex;  
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  padding: 10px;    
+}

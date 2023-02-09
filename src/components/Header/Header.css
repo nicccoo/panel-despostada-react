@@ -7,20 +7,22 @@
     color: #e6e9ec;
     font-size: 12px;
     line-height: 22px;
-    padding: 18px;
+    padding: 18px; 
+    justify-content: space-between;
 }   
 
 .header-izq__logo {
     width: 80px;
     margin-top: 7px;
+    margin-right: 20px;
 }
 
-.header-izq {
-    width: 50%;
+.header-izq {    
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 33.3%;
 }
 
 .header-izq__title {
@@ -30,12 +32,41 @@
     height: 60px;
 }
 
-.header-der {
-    width: 50%;
+.header-center {
     display: flex;
+    justify-content:center;
     flex-direction: column;
-    justify-content: end;
     align-items: center;
+    width: 33.3%;        
+}
+
+.header-center > * {
+    padding: 2px;       
+}
+
+.header-der {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 33.3%;
+}
+
+
+.header-der__navbar > a {
+    padding: 4px;
+    margin: 0 8px;
+    color: #e6e9ec;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid#e6e9ec;
+    transition: 0.165s;
+}
+
+.header-der__navbar > a:hover {
+    color: #1379FF;
+    transition: 0.165s;
+    border-color: #1379FF;
+    
 }
 
 .desc {
