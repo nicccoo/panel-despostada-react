@@ -4,7 +4,7 @@ import "./card.css";
 
 const Card = (props) => {
   return (
-    <div className="aside-charts">
+    <>
       {props.details.map((item, index) => (
         <div className="card-container" key={index}>
           <div>
@@ -13,7 +13,7 @@ const Card = (props) => {
           <h2 className="card-desc">{item.value}</h2>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
