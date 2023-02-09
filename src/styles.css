@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -30,7 +31,6 @@
 
 .aside-charts { 
     display: flex;
-    justify-content: center;
     width: 500px;   
     padding:12px;
     height: 100%;

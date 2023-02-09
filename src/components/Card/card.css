@@ -1,0 +1,28 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 240px;
+    background-color: #192430;
+    border-radius: 12px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    color: #e6e9ec;
+    align-items: center;
+    width: 100%;
+}
+
+.card-desc {
+    background-color: #1379FF;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    padding:22px;
+    width: 300px;
+    align-items: center;
+    opacity: 0.95;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.card-title {
+    text-align: center;
+    width: 300px;
+}
