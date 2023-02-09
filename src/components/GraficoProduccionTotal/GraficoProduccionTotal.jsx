@@ -70,9 +70,16 @@ const GraficoProduccionTotal = () => {
             color: "#e6e9ec",
           },
         },
-        beginAtZero: true,
+        
       },
       plugins: {
+        datalabels: {
+          color: '#BLACK',
+          font:{
+            weight: 'bold',
+            size: 18
+          }                
+        },
         legend: {
           position: "top",
         },
@@ -92,13 +99,13 @@ const GraficoProduccionTotal = () => {
   }, []);
 
   return (
-    <div className="aside-charts">
+    <>
       <Bar
         className="prod-total__barchart"
         data={chartData}
         options={chartOptions}
       />
-    </div>
+    </>
   );
 };
 
