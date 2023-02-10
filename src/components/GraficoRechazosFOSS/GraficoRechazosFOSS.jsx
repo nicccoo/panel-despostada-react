@@ -35,12 +35,12 @@ const GraficoRechazosFOSS = () => {
       labels: ["Rechazos FOSS"],
       datasets: [
         {
-          label: "CONFIRMADO",          
+          label: "NEGATIVO",          
           backgroundColor: CHART_COLOR_GREEN,
           data: [-2, -4],
         },
         {
-          label: "NO CONFIRMADO",
+          label: "POSITIVO",
           color: "#e6e9ec",
           backgroundColor: CHART_COLOR_BLUE,
 
