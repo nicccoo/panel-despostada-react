@@ -36,7 +36,7 @@ const GraficoProduccionTotal = () => {
           label: "Producción Real",
           fontColor: "",
           backgroundColor: CHART_COLOR_BLUE,
-          data: [1910],
+          data: [2001],
         },
         {
           label: "Producción Programada",

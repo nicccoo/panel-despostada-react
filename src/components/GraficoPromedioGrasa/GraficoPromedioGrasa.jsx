@@ -38,7 +38,7 @@ const GraficoPromedioGrasa = () => {
               label: "% GRASA",
               fontColor: "",
               backgroundColor: CHART_COLOR_BLUE,
-              data: [-0.7,-10, 0, 10]
+              data: [-0.7, 11]
             },
 
           ],
@@ -64,7 +64,7 @@ const GraficoPromedioGrasa = () => {
             y: {
               ticks: {
                 color: "#e6e9ec",
-                beginAtZero: true
+
               },
               grid: {
                 color: "#e6e9ec",
