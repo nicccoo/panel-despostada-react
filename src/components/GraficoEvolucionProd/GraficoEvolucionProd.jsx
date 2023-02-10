@@ -36,7 +36,7 @@ const GraficoEvolucionProd = () => {
       datasets: [
         {
           label: "Producción real",
-          data: [0, 180, 450, 670, 1020, 1450, 1470, 1750, 1910],
+          data: [0, 180, 450, 670, 1020, 1450, 1470, 1750, 2001],
           backgroundColor: CHART_COLOR_BLUE,
           borderColor: CHART_COLOR_BLUE,
           tension: 0.1,
