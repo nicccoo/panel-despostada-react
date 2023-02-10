@@ -17,7 +17,7 @@ const Header = () => {
         </div>
       </div>
       <div className="header-center">
-        <h3 className="desc">SALA DEPOSTADA TURNO MAÑANA</h3>
+        <h3 className="desc">SALA DESPOSTADA TURNO MAÑANA</h3>
         <img src={reloj} alt="reloj" className="header-der__reloj" />
         <p>TIEMPO PARA PROXIMO DESCANSO</p>
       </div>
