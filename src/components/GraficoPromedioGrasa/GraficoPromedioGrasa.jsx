@@ -38,7 +38,7 @@ const GraficoPromedioGrasa = () => {
               label: "% GRASA",
               fontColor: "",
               backgroundColor: CHART_COLOR_BLUE,
-              data: [-7,-10, 0, 10]
+              data: [-0.7,-10, 0, 10]
             },
 
           ],
@@ -47,7 +47,7 @@ const GraficoPromedioGrasa = () => {
         setChartOptions({
           responsive: true,
           layout: {
-            padding: 10,
+            padding: 25,
           },
           indexAxis: "y",
           scales: {
@@ -101,7 +101,9 @@ const GraficoPromedioGrasa = () => {
             className="prod-total__barchart"
             data={chartData}
             options={chartOptions}
+            
           />
+          <span style={{fontSize: 11.3, color: 'white', marginTop: '108px', position: 'absolute', marginRight:'-328px', fontFamily:'Verdana'}}>30</span>
         </div>
       );
 }
