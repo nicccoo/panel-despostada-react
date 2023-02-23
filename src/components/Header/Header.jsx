@@ -12,14 +12,11 @@ const Header = () => {
           <img className="header-izq__logo" src={logo} alt="" />
         </Link>
         <div className="header-izq__title">
-          <h3 className="desc">Fecha: 31/01/2023 - Hora: 10:00 Hs.</h3>
-          <h3 className="desc">Presencialidad (%): 95%</h3>
+          <h3 className="desc">Fecha: 31/01/2023 - Hora: 10:00 Hs.</h3>        
         </div>
       </div>
       <div className="header-center">
-        <h3 className="desc">SALA DESPOSTADA TURNO MAÑANA</h3>
-        <img src={reloj} alt="reloj" className="header-der__reloj" />
-        <p>TIEMPO PARA PROXIMO DESCANSO</p>
+        <h3 className="header-center__title">SALA DESPOSTADA TURNO MAÑANA</h3>
       </div>
       <div className="header-der">
         <nav className="header-der__navbar">

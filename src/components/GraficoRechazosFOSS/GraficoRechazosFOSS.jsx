@@ -37,14 +37,14 @@ const GraficoRechazosFOSS = () => {
         {
           label: "NEGATIVO",          
           backgroundColor: CHART_COLOR_GREEN,
-          data: [-2, -4],
+          data: [-40],
         },
         {
           label: "POSITIVO",
           color: "#e6e9ec",
           backgroundColor: CHART_COLOR_BLUE,
 
-          data: [3, 4],
+          data: [19, 4],
         },
       ],
     });
