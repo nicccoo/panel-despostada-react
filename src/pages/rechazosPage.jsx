@@ -34,6 +34,8 @@ const RechazosPage = () => {
         <div className="main-charts__abajo">
           <GraficoRechazosFOSS />
           <GraficoRechazosFOSS />
+          <GraficoRechazosFOSS />
+
         </div>
       </div>
     </div>
