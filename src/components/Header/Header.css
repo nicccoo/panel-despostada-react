@@ -21,14 +21,14 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 33.3%;
 }
 
 .header-izq__title {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     height: 60px;
 }
 
@@ -42,6 +42,12 @@
 
 .header-center > * {
     padding: 2px;       
+}
+
+.header-center__title {
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 22px;
 }
 
 .header-der {
@@ -68,8 +74,3 @@
     border-color: #1379FF;
 }
 
-.desc {
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 22px;
-}
