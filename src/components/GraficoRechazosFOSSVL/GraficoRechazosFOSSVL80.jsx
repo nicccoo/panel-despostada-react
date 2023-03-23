@@ -11,7 +11,8 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import { CHART_COLOR_BLUE, CHART_COLOR_GREEN } from "../../utils/CHARTS_COLORS";
-import "./graficoRechazosFOSS.css";
+import "./graficoRechazosFOSSVL80.css";
+import { useRechazos } from "../../context/rechazosContext";
 
 ChartsJS.register(
   CategoryScale,
@@ -23,11 +24,10 @@ ChartsJS.register(
   ChartDataLabels
 );
 
-const GraficoRechazosFOSS = () => {
+const GraficoRechazosFOSSVL80 = () => {
   const [chartData, setChartData] = useState({
     datasets: [],
   });
-
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
@@ -35,16 +35,15 @@ const GraficoRechazosFOSS = () => {
       labels: ["Rechazos FOSS"],
       datasets: [
         {
-          label: "NEGATIVO",          
+          label: "NEGATIVO",
           backgroundColor: CHART_COLOR_GREEN,
-          data: [-40],
+          data: [-4],
         },
         {
           label: "POSITIVO",
           color: "#e6e9ec",
           backgroundColor: CHART_COLOR_BLUE,
-
-          data: [19, 4],
+          data: [9],
         },
       ],
     });
@@ -75,7 +74,7 @@ const GraficoRechazosFOSS = () => {
       },
       plugins: {
         datalabels: {
-          color: "#BLACK",
+          color: "#000",
           font: {
             weight: "bold",
             size: 18,
@@ -89,7 +88,7 @@ const GraficoRechazosFOSS = () => {
         },
         title: {
           display: true,
-          text: "RECHAZOS FOSS (VL 70)",
+          text: "RECHAZOS FOSS (VL 80)",
           color: "#e6e9ec",
           font: {
             size: 15,
@@ -102,12 +101,13 @@ const GraficoRechazosFOSS = () => {
   return (
     <div className="foss-charts">
       <Bar
+        height={180}
         className="rechazos-foss__barchart"
         data={chartData}
         options={chartOptions}
-      />      
+      />
     </div>
   );
 };
 
-export default GraficoRechazosFOSS;
+export default GraficoRechazosFOSSVL80;

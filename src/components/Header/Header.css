@@ -1,76 +1,91 @@
 .header {
-    width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    background-color: #192430;
-    color: #e6e9ec;
-    font-size: 12px;
-    line-height: 22px;
-    padding: 18px; 
-    justify-content: space-between;
-}   
-
-.header-izq__logo {
-    width: 80px;
-    margin-top: 7px;
-    margin-right: 20px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  background-color: #192430;
+  color: #e6e9ec;
+  font-size: 12px;
+  line-height: 22px;
+  padding: 18px;
+  justify-content: space-between;
 }
 
-.header-izq {    
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 33.3%;
+.header-izq {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 33.3%;  
+}
+
+.header-izq__logo {
+  width: 80px;
+  margin-top: 7px;
+  margin-right: 20px;
 }
 
 .header-izq__title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
 }
 
 .header-center {
-    display: flex;
-    justify-content:center;
-    flex-direction: column;
-    align-items: center;
-    width: 33.3%;        
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 33.3%;
 }
 
 .header-center > * {
-    padding: 2px;       
+  padding: 2px;
 }
 
 .header-center__title {
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 22px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .header-der {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 33.3%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 33.3%;
 }
 
-
 .header-der__navbar > a {
-    padding: 4px;
-    margin: 0 8px;
-    color: #e6e9ec;
-    text-decoration: none;
-    font-size: 16px;
-    border-bottom: 1px solid#e6e9ec;
-    transition: 0.165s;
+  padding: 4px;
+  margin: 0 8px;
+  color: #e6e9ec;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid#e6e9ec;
+  transition: 0.165s;
 }
 
 .header-der__navbar > a:hover {
-    color: #1379FF;
-    transition: 0.165s;
-    border-color: #1379FF;
+  color: #1379ff;
+  transition: 0.165s;
+  border-color: #1379ff;
 }
 
+.header-izq__descripcion {
+   display:flex;   
+   width: 200px;
+   height: 100%;
+   justify-content: space-evenly;   
+   flex-direction: column;
+}
+
+.header-izq__hora {
+  display: flex;
+  width: 130px;    
+  justify-content: space-between
+}
+
+.header-izq__fecha {  
+}

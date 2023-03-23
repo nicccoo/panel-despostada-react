@@ -8,10 +8,9 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Chart, Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import "./graficoEvolucionProd.css";
-
 ChartsJS.register(
   CategoryScale,
   LinearScale,
@@ -22,48 +21,78 @@ ChartsJS.register(
   LineElement
 );
 import { CHART_COLOR_BLUE, CHART_COLOR_GREEN } from "../../utils/CHARTS_COLORS";
+import axios from "axios";
+import { useProduccion } from "../../context/produccionContext";
 
-const GraficoEvolucionProd = () => {
+export const GraficoEvolucionProd = () => {
   const [chartData, setChartData] = useState({
     datasets: [],
   });
 
-  const [chartOptions, setChartOptions] = useState({});
+  const { prodProgramada } = useProduccion();
+
+  const [chartOptions, setChartOptions] = useState([]);
+  const [totalData, setTotalData] = useState([]);
+
+  const dividir = async () => {
+    let total = [];
+    await prodProgramada.map((p) => {
+      let numDividido;
+      numDividido = p.unidades / 9;
+
+      for (let i = 0; i < 10; i++) {
+        if (i == 0) {
+          total.push(Number(0));
+        } else {
+          total.push(Number(numDividido) + Number(total[i - 1]));
+        }
+      }
+      console.log(total);
+      setTotalData(total);
+    });
+  };
+
+  useEffect(() => {
+    dividir();
+  }, []);
 
   useEffect(() => {
     setChartData({
-      labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", 9],
+      labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
       datasets: [
         {
           label: "Producción real",
-          data: [0, 180, 450, 670, 1020, 1450, 1470, 1750, 2001],
           backgroundColor: CHART_COLOR_BLUE,
           borderColor: CHART_COLOR_BLUE,
           tension: 0.1,
-          
+          data: [0, 180, 450, 670, 1020, 1450, 1470, 1750, 2001],
         },
+
         {
           label: "Producción programada",
-          data: [0, 261, 522, 783, 1044, 1305, 1566, 1827, 2088, 2355],
           backgroundColor: CHART_COLOR_GREEN,
           borderColor: CHART_COLOR_GREEN,
+          //data: totalData.map((p) => Math.round(p)),
+          data: [0, 400, 800, 1000, 1200, 1450, 1620, 1750, 2050],
         },
       ],
+      lineAtIndex: [2.4]
     });
 
     setChartOptions({
       responsive: true,
       layout: {
-        padding: 16 ,
+        padding: 16,
       },
       scales: {
         x: {
           title: {
             display: true,
-            text: 'HORA',
-            color: 'white',
-            size: 15
-          },          
+
+            text: "HORA",
+            color: "white",
+            size: 15,
+          },
           ticks: {
             color: "#e6e9ec",
           },
@@ -71,12 +100,12 @@ const GraficoEvolucionProd = () => {
             color: "#e6e9ec",
           },
         },
-        y:{
+        y: {
           title: {
             display: true,
-            text: 'CANT. DE CUARTOS',
-            color: 'white',
-            size: 15
+            text: "CANT. DE CUARTOS",
+            color: "white",
+            size: 15,
           },
           ticks: {
             color: "#e6e9ec",
@@ -88,13 +117,13 @@ const GraficoEvolucionProd = () => {
       },
       plugins: {
         datalabels: {
-          color: 'white',
-          anchor: 'start',
-          align: 'left',
-          font:{
-            weight: 'bold',
-            size: 15
-          }                
+          color: "white",
+          anchor: "start",
+          align: "left",
+          font: {
+            weight: "bold",
+            size: 15,
+          },
         },
         legend: {
           position: "top",
@@ -104,8 +133,8 @@ const GraficoEvolucionProd = () => {
           text: "EVOLUCIÓN DE LA PRODUCCIÓN",
           color: "#e6e9ec",
           font: {
-            size: 15
-          }            
+            size: 15,
+          },
         },
       },
     });
@@ -115,10 +144,12 @@ const GraficoEvolucionProd = () => {
     <div className="evol-prod__main">
       <Line
         className="evol-prod__linechart"
+        redraw={true}
         data={chartData}
         options={chartOptions}
       />
     </div>
+    //
   );
 };
 

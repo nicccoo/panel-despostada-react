@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import ProduccionPage from "./pages/produccionPage";
 import RechazosPage from "./pages/rechazosPage";
@@ -10,9 +11,13 @@ function App() {
     <div className="container">
       <Header />
       <Routes>
-        <Route path="/" element={<ProduccionPage />} />
-        <Route path="/rechazos" element={<RechazosPage />} />
-        <Route path="/rechazos-resumen" element={<RechazosResumenPage />} />
+        <Route exact path="/" element={<ProduccionPage />} />
+        <Route exact path="/rechazos" element={<RechazosPage />} />
+        <Route
+          exact
+          path="/rechazos-resumen"
+          element={<RechazosResumenPage />}
+        />
         <Route path="*" element={<h1>error</h1>} />
       </Routes>
     </div>

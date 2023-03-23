@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import TableResumenRechazos from "../components/TableResumenRechazos/TableResumenRechazos";
 
-const RechazosResumenPage = () => {
-  return (
-    <h1 style={{textAlign: 'center'}}>RESUMEN RECHAZOS (PROXIMAMENTE)</h1>
-  )
-}
+export const RechazosResumenPage = () => {
+  const navigate = useNavigate();
 
-export default RechazosResumenPage
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      return navigate("/");
+    }, 100000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return <TableResumenRechazos />;
+};
+
+export default RechazosResumenPage;
