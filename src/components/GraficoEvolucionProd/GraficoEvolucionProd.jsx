@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+import { useProduccion } from "../../context/produccionContext";
+import { CHART_COLOR_BLUE, CHART_COLOR_GREEN, CHART_COLOR_WHITE } from "../../utils/CHARTS_COLORS";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartsJS,
   CategoryScale,
@@ -8,8 +12,6 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
-import { Chart, Line } from "react-chartjs-2";
-import { useState, useEffect } from "react";
 import "./graficoEvolucionProd.css";
 ChartsJS.register(
   CategoryScale,
@@ -20,41 +22,36 @@ ChartsJS.register(
   PointElement,
   LineElement
 );
-import { CHART_COLOR_BLUE, CHART_COLOR_GREEN } from "../../utils/CHARTS_COLORS";
-import axios from "axios";
-import { useProduccion } from "../../context/produccionContext";
 
 export const GraficoEvolucionProd = () => {
+  const { prodProgramada, prodReal } = useProduccion();
+
   const [chartData, setChartData] = useState({
     datasets: [],
   });
-
-  const { prodProgramada } = useProduccion();
-
   const [chartOptions, setChartOptions] = useState([]);
-  const [totalData, setTotalData] = useState([]);
 
-  const dividir = async () => {
-    let total = [];
-    await prodProgramada.map((p) => {
-      let numDividido;
+  let prodProgramadaDividida = [];
+
+  useEffect(() => {
+    produccionDividida(prodProgramada);
+  }, []);
+
+  const produccionDividida = (produccion) => {
+    produccion.map((p) => {
+      let numDividido = 0;
       numDividido = p.unidades / 9;
 
       for (let i = 0; i < 10; i++) {
         if (i == 0) {
-          total.push(Number(0));
+          prodProgramadaDividida.push(Number(0));
         } else {
-          total.push(Number(numDividido) + Number(total[i - 1]));
+          prodProgramadaDividida.push(Number(numDividido) + Number(prodProgramadaDividida[i - 1]));
         }
       }
-      console.log(total);
-      setTotalData(total);
     });
+    return prodProgramadaDividida;
   };
-
-  useEffect(() => {
-    dividir();
-  }, []);
 
   useEffect(() => {
     setChartData({
@@ -64,19 +61,15 @@ export const GraficoEvolucionProd = () => {
           label: "Producción real",
           backgroundColor: CHART_COLOR_BLUE,
           borderColor: CHART_COLOR_BLUE,
-          tension: 0.1,
-          data: [0, 180, 450, 670, 1020, 1450, 1470, 1750, 2001],
+          data: prodReal.map((p) => p.unidades),
         },
-
         {
           label: "Producción programada",
           backgroundColor: CHART_COLOR_GREEN,
           borderColor: CHART_COLOR_GREEN,
-          //data: totalData.map((p) => Math.round(p)),
-          data: [0, 400, 800, 1000, 1200, 1450, 1620, 1750, 2050],
+          data: prodProgramadaDividida.map((p) => Math.round(p)),
         },
       ],
-      lineAtIndex: [2.4]
     });
 
     setChartOptions({
@@ -90,34 +83,33 @@ export const GraficoEvolucionProd = () => {
             display: true,
 
             text: "HORA",
-            color: "white",
-            size: 15,
+            color: CHART_COLOR_WHITE,
           },
           ticks: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
           grid: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
         },
         y: {
           title: {
             display: true,
             text: "CANT. DE CUARTOS",
-            color: "white",
+            color: CHART_COLOR_WHITE,
             size: 15,
           },
           ticks: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
           grid: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
         },
       },
       plugins: {
         datalabels: {
-          color: "white",
+          color: CHART_COLOR_WHITE,
           anchor: "start",
           align: "left",
           font: {
@@ -131,7 +123,7 @@ export const GraficoEvolucionProd = () => {
         title: {
           display: true,
           text: "EVOLUCIÓN DE LA PRODUCCIÓN",
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           font: {
             size: 15,
           },
