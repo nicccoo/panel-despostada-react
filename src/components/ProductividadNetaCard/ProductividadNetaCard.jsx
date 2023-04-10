@@ -5,7 +5,6 @@ import "./card.css";
 
 const ProductividadNetaCard = () => {
   const [productividadNeta, setProductividadNeta] = useState([]);
-  const [presentes, setPresentes] = useState([]);
 
   useEffect(() => {
     const ProductividadNetaData = async () => {
@@ -24,30 +23,10 @@ const ProductividadNetaCard = () => {
     return () => {};
   }, []);
 
-  useEffect(() => {
-    const getPresentes = async () => {
-      try {
-        const res = await axios.get(
-          "https://localhost:7075/api/dDespostada_Presentes/presentes"
-        );
-        setPresentes(res.data);
-        console.log(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getPresentes();
-
-    return () => {};
-  }, []);
-
-  console.log(presentes);
-
   const getKGHH = (kilos, presentes, horasTranscurridas) => {
     const resultado = kilos / (presentes * horasTranscurridas);
 
-    return Math.round(resultado);
+    return Number(Math.round(resultado));
   };
 
   return (
@@ -57,14 +36,11 @@ const ProductividadNetaCard = () => {
           <div>
             <h3 className="card-title">PRODUCTIVIDAD NETA [KG/HH]</h3>
           </div>
-          <h2 className="card-desc">
-            {getKGHH(Number(item.kilos), 227, 8)} KG.
-          </h2>
+          <h2 className="card-desc">{getKGHH(item.kilos, 200, 9.5)} KG.</h2>
         </div>
       ))}
     </>
   );
-  s;
 };
 
 export default ProductividadNetaCard;
