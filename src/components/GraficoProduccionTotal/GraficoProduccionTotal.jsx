@@ -9,7 +9,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { useState, useEffect } from "react";
-import { CHART_COLOR_BLUE, CHART_COLOR_GREEN } from "../../utils/CHARTS_COLORS";
+import { CHART_COLOR_BLUE, CHART_COLOR_GREEN, CHART_COLOR_WHITE } from "../../utils/CHARTS_COLORS";
 import { useProduccion } from "../../context/produccionContext";
 import "./GraficoProduccionTotal.css";
 
@@ -23,16 +23,12 @@ ChartsJS.register(
 );
 
 const GraficoProduccionTotal = () => {
-  
-    const { prodProgramada } = useProduccion();
-    const { prodReal } = useProduccion();
-
+  const { prodProgramada } = useProduccion();
+  const { prodReal } = useProduccion();
 
   const [chartData, setChartData] = useState({
     datasets: [],
   });
-
-
 
   const [chartOptions, setChartOptions] = useState({});
 
@@ -45,13 +41,12 @@ const GraficoProduccionTotal = () => {
           fontColor: "",
           backgroundColor: CHART_COLOR_BLUE,
           data: prodReal.map((r) => r.unidades),
-          
         },
         {
           label: "Producción Programada",
           color: "#e6e9ec",
           backgroundColor: CHART_COLOR_GREEN,
-          data:prodProgramada.map((p) => p.unidades),
+          data: prodProgramada.map((p) => p.unidades),
         },
       ],
     });
@@ -65,18 +60,18 @@ const GraficoProduccionTotal = () => {
       scales: {
         x: {
           ticks: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
           grid: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
         },
         y: {
           ticks: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
           grid: {
-            color: "#e6e9ec",
+            color: CHART_COLOR_WHITE,
           },
         },
       },
@@ -92,12 +87,12 @@ const GraficoProduccionTotal = () => {
           position: "top",
         },
         labels: {
-          fontColor: "#e6e9ec",
+          fontColor: CHART_COLOR_WHITE,
         },
         title: {
           display: true,
           text: "PRODUCCIÓN TOTAL",
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           font: {
             size: 15,
           },
