@@ -11,7 +11,7 @@ export const useProduccion = () => {
 
 export const ProduccionProvider = ({ children }) => {
   const [prodProgramada, setProdProgramada] = useState([]);
-  const [prodReal, setProdReal] = useState([]);
+  const [prodReal, setProdReal] = useState([]);  
 
   useEffect(() => {
     const getDataProg = async () => {
@@ -23,8 +23,7 @@ export const ProduccionProvider = ({ children }) => {
       getDataProg();
     }, 100000);
 
-
-    getDataProg()
+    getDataProg();
     return () => clearTimeout(timer);
   }, []);
 
@@ -38,10 +37,10 @@ export const ProduccionProvider = ({ children }) => {
       getDataReal();
     }, 100000);
 
-
-    getDataReal()
+    getDataReal();
     return () => clearTimeout(timer);
   }, []);
+  
 
   return (
     <produccionContext.Provider value={{ prodProgramada, prodReal }}>

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import GraficoProduccionTotal from "../components/GraficoProduccionTotal/GraficoProduccionTotal";
 import GraficoEvolucionProd from "../components/GraficoEvolucionProd/GraficoEvolucionProd";
 import ProductividadNetaCard from "../components/ProductividadNetaCard/ProductividadNetaCard";
-import "../styles.css";
 import { useNavigate } from "react-router-dom";
+import "../styles.css";
 
 const ProduccionPage = () => {
   const navigate = useNavigate();
