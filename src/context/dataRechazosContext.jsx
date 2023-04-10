@@ -32,10 +32,10 @@ export const useDataRechazos = () => {
 };
 
 export const DataRechazosProvider = ({ children }) => {
-  const [prueba, setPrueba] = useState(3.9);
+  const [prueba, setPrueba] = useState(9);
 
   const [chartData7030, setChartData7030] = useState({
-    labels: [22,23 ,24 ,25 ,26 ,27 ,28 ,29 ,30 ,31 , 32],
+    labels: [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
     datasets: [
       {
         label: "% GRASA",
@@ -81,7 +81,7 @@ export const DataRechazosProvider = ({ children }) => {
             // Indicates the type of annotation
             type: "box",
             xMin: prueba,
-            xMax: prueba + 0.150,
+            xMax: prueba + 0.15,
             yMin: 0,
             yMax: 100,
             backgroundColor: "rgba(255, 99, 132)",
@@ -110,7 +110,7 @@ export const DataRechazosProvider = ({ children }) => {
   });
 
   const [chartData8020, setChartData8020] = useState({
-    labels: [15,16 ,17 ,18 ,19 ,20 ,21, 22],
+    labels: [15, 16, 17, 18, 19, 20, 21, 22],
     datasets: [
       {
         label: "% GRASA",
@@ -154,8 +154,8 @@ export const DataRechazosProvider = ({ children }) => {
           box1: {
             // Indicates the type of annotation
             type: "box",
-            xMin: 4.4,
-            xMax: 4.5,
+            xMin: 3.4,
+            xMax: 3.5,
             yMin: 0,
             yMax: 100,
             backgroundColor: "rgba(255, 99, 132)",
@@ -184,7 +184,7 @@ export const DataRechazosProvider = ({ children }) => {
   });
 
   const [chartData6040, setChartData6040] = useState({
-    labels: [32, 33,34 ,35 ,36 ,37 ,38 ,39 ,40 ,41 , 42],
+    labels: [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42],
     datasets: [
       {
         label: "% GRASA",
@@ -194,6 +194,7 @@ export const DataRechazosProvider = ({ children }) => {
       },
     ],
   });
+
   const [chartOptions6040, setChartOptions6040] = useState({
     responsive: true,
     layout: {
