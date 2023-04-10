@@ -27,10 +27,10 @@ const TableResumenRechazos = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       getDataRechazos();
-    }, 100000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
- 
+
   return (
     <ThemeProvider theme={getMuiTheme()}>
       <MUIDataTable
@@ -44,7 +44,7 @@ const TableResumenRechazos = () => {
             r.grupoProducto,
             r.tipoDestino,
             `${r.kilos} KG.`,
-            r.numeroOperario, 
+            r.numeroOperario,
           ];
         })}
         columns={columns}
