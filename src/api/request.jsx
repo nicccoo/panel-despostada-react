@@ -32,3 +32,14 @@ export const getDataRechazos = async () => {
     console.log(error);
   }
 };
+
+export const getProductividadNeta = async () => {
+  try {
+    const res = await axios.get(
+      "http://192.168.10.111:9080/api/dDespostada_Producido/produccion-neta"
+    );
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
