@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { CHART_COLOR_BLUE, CHART_COLOR_GREEN } from "../utils/CHARTS_COLORS";
-import { useState, useEffect, useContext, createContext } from "react";
+import { useState, useContext, createContext } from "react";
 
 ChartsJS.register(
   CategoryScale,

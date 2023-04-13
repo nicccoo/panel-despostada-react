@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { ThemeProvider } from "@mui/material/styles";
 import { getMuiTheme, columns } from "./getMuiTheme";
 import { getDataRechazos } from "../../api/request";
 import { format } from "date-fns";
 import MUIDataTable from "mui-datatables";
+import axios from "axios";
 import "./tableResumenRechazos.css";
 
 const TableResumenRechazos = () => {

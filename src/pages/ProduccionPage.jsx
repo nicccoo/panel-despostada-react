@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import GraficoProduccionTotal from "../components/GraficoProduccionTotal/GraficoProduccionTotal";
 import GraficoEvolucionProd from "../components/GraficoEvolucionProd/GraficoEvolucionProd";
 import ProductividadNetaCard from "../components/ProductividadNetaCard/ProductividadNetaCard";

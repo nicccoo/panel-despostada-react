@@ -5,8 +5,8 @@ import GraficoPromedioGrasa from "../components/GraficoPromedioGrasa/GraficoProm
 import GraficoRechazosFOSSVL from "../components/GraficoRechazosFOSSVL/GraficoRechazosFOSSVL";
 import PorcGrasaAceptadaFOSS from "../components/PorcGrasaAceptadaFOSS/PorcGrasaAceptadaFOSS";
 import PorcCajasRechazadasFOSS from "../components/PorcCajasRechazadasFOSS/PorcCajasRechazadasFOSS";
-import "../styles.css";
 import { useDataRechazosFOSS } from "../context/dataRechazosFOSSContext";
+import "../styles.css";
 
 const RechazosPage = () => {
   const {
@@ -34,7 +34,7 @@ const RechazosPage = () => {
       return navigate("/rechazos-resumen");
     }, 100000);
 
-    return () => clearTimeout(timeout); 
+    return () => clearTimeout(timeout);
   }, []);
 
   return (

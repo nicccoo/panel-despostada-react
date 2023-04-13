@@ -1,9 +1,7 @@
-import { format } from "date-fns";
 import React from "react";
 import { useEffect, useRef } from "react";
 
 export const Reloj = () => {
-
   const h4 = useRef();
   const ti = () => {
     const fechahora = new Date();
@@ -20,9 +18,9 @@ export const Reloj = () => {
     if (segundos < 10) {
       segundos = "0" + segundos;
     }
-    
+
     return `${hora}:${minutos}:${segundos}`;
-};
+  };
 
   useEffect(() => {
     const cl = setInterval(() => {

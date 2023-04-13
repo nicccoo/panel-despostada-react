@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, createContext, useMemo } from "react";
+import { useState, useEffect, useContext, createContext } from "react";
 import { getDataProdProgramada, getDataProdReal } from "../api/request";
 
 const produccionContext = createContext();

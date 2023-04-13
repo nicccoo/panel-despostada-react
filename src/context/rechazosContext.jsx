@@ -23,7 +23,7 @@ export const RechazosProvider = ({ children }) => {
   }, []);
 
   return (
-    <rechazosContext.Provider value={{rechazos}}>
+    <rechazosContext.Provider value={{ rechazos }}>
       {children}
     </rechazosContext.Provider>
   );

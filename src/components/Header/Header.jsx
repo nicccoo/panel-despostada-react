@@ -4,11 +4,9 @@ import logo from "../../assets/logo.jpg";
 import { Link } from "react-router-dom";
 import Reloj from "../Reloj/Reloj";
 import { format } from "date-fns";
-import { useProduccion } from "../../context/produccionContext";
 
 const Header = () => {
-  const [fecha, setFecha] = useState(format(new Date(), "dd/MM/yyyy"));
-  const [turno, setTurno] = useState("");
+  const [fecha, setFecha] = useState(format(new Date(), "dd/MM/yyyy"));  
 
   useEffect(() => {
     const interval = setInterval(() => {
