@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { useProduccion } from "../../context/produccionContext";
-import { CHART_COLOR_BLUE, CHART_COLOR_GREEN, CHART_COLOR_WHITE } from "../../utils/CHARTS_COLORS";
+import {
+  CHART_COLOR_BLUE,
+  CHART_COLOR_GREEN,
+  CHART_COLOR_WHITE,
+} from "../../utils/CHARTS_COLORS";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartsJS,
@@ -34,10 +38,10 @@ export const GraficoEvolucionProd = () => {
   let prodProgramadaDividida = [];
 
   useEffect(() => {
-    produccionDividida(prodProgramada);
+    dividirProduccionProgramada(prodProgramada);
   }, []);
 
-  const produccionDividida = (produccion) => {
+  const dividirProduccionProgramada = (produccion) => {
     produccion.map((p) => {
       let numDividido = 0;
       numDividido = p.unidades / 9;
@@ -46,7 +50,9 @@ export const GraficoEvolucionProd = () => {
         if (i == 0) {
           prodProgramadaDividida.push(Number(0));
         } else {
-          prodProgramadaDividida.push(Number(numDividido) + Number(prodProgramadaDividida[i - 1]));
+          prodProgramadaDividida.push(
+            Number(numDividido) + Number(prodProgramadaDividida[i - 1])
+          );
         }
       }
     });

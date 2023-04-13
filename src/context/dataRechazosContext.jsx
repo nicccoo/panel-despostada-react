@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 
 import { useState, useContext, createContext } from "react";
-import { CHART_COLOR_BLUE, CHART_COLOR_GREEN } from "../utils/CHARTS_COLORS";
+import { CHART_COLOR_WHITE } from "../utils/CHARTS_COLORS";
 import Annotation from "chartjs-plugin-annotation";
 
 ChartsJS.register(
@@ -55,21 +55,21 @@ export const DataRechazosProvider = ({ children }) => {
     scales: {
       x: {
         ticks: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           beginAtZero: true,
           lineAtIndex: 30,
         },
         grid: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
         },
       },
       y: {
         ticks: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           display: false,
         },
         grid: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           display: false,
         },
       },
@@ -78,7 +78,6 @@ export const DataRechazosProvider = ({ children }) => {
       annotation: {
         annotations: {
           box1: {
-            // Indicates the type of annotation
             type: "box",
             xMin: prueba,
             xMax: prueba + 0.15,
@@ -96,12 +95,12 @@ export const DataRechazosProvider = ({ children }) => {
       },
 
       labels: {
-        fontColor: "#e6e9ec",
+        fontColor: CHART_COLOR_WHITE,
       },
       title: {
         display: true,
         text: "CONSUMO: DEL. 70/30",
-        color: "#e6e9ec",
+        color: CHART_COLOR_WHITE,
         font: {
           size: 15,
         },
@@ -130,20 +129,20 @@ export const DataRechazosProvider = ({ children }) => {
     scales: {
       x: {
         ticks: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           beginAtZero: true,
         },
         grid: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
         },
       },
       y: {
         ticks: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           display: false,
         },
         grid: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           display: false,
         },
       },
@@ -170,12 +169,12 @@ export const DataRechazosProvider = ({ children }) => {
       },
 
       labels: {
-        fontColor: "#e6e9ec",
+        fontColor: CHART_COLOR_WHITE,
       },
       title: {
         display: true,
         text: "CONSUMO: DEL. 80/20",
-        color: "#e6e9ec",
+        color: CHART_COLOR_WHITE,
         font: {
           size: 15,
         },
@@ -204,20 +203,20 @@ export const DataRechazosProvider = ({ children }) => {
     scales: {
       x: {
         ticks: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           beginAtZero: true,
         },
         grid: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
         },
       },
       y: {
         ticks: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           display: false,
         },
         grid: {
-          color: "#e6e9ec",
+          color: CHART_COLOR_WHITE,
           display: false,
         },
       },
@@ -244,12 +243,12 @@ export const DataRechazosProvider = ({ children }) => {
       },
 
       labels: {
-        fontColor: "#e6e9ec",
+        fontColor: CHART_COLOR_WHITE,
       },
       title: {
         display: true,
         text: "CONSUMO: DEL. 60/40",
-        color: "#e6e9ec",
+        color: CHART_COLOR_WHITE,
         font: {
           size: 15,
         },
